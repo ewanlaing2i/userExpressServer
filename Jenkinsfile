@@ -20,7 +20,7 @@ pipeline {
         stage('Test') {
             steps {
                 // Run the Docker container
-                sh 'docker run -d -p 3000:3000 --name express-server-test express-server'
+                sh 'docker run -p 5000:5000 user-express-server'
 
                 // Optionally, you can run some tests here
                 // Example: sh 'docker exec express-server-test npm test'
@@ -35,6 +35,7 @@ pipeline {
                 // Deploy your Docker container
                 // This could be to a staging environment or production
                 // Example: sh 'docker run -d -p 3000:3000 --name express-server express-server'
+                echo 'Deploy stage - no deployment steps defined'
             }
         }
     }
